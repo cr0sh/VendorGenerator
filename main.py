@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 from time import sleep
 from termcolor import colored
 from datetime import datetime
@@ -37,8 +38,8 @@ else:
         print(colored("[!] Couldn't find any file/folder in vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/proprietary folder: sys.exiting.", 'red'))
         print(colored("[!] Did you put pre-built files on that folder?", 'red'))
     elif not file_list:
-        print(colored("[!] Error while processing find command: sys.exiting.", 'red'))
-        print(colored("[!] Maybe you should create that directory but you haven't"), 'red')
+        print(colored("[!] Error while processing find command: exiting.", 'red'))
+        print(colored("[!] Maybe you should create that directory but you haven't.", 'red'))
     else:
         delList = []
 
