@@ -4,3 +4,5 @@ info/*
 HEAD
 config
 description
+build/*
+
