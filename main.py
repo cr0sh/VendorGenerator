@@ -1,3 +1,4 @@
+
 import os
 import sys
 import subprocess
@@ -21,12 +22,13 @@ sndhead = "PRODUCT_COPY_FILES +="
 #  ############# M A N I F E S T ##############
 
 
-print('\033[01;36mAndroid vendor-blobs.mk generator')
+#print('\033[01;36mAndroid vendor-blobs.mk generator')
+print(colored("Android vendor-blobs.mk generator", 'cyan'))
 sleep(.1)
 if len(sys.argv) < 3 :
     print(colored("[!] Usage: " + sys.argv[0] + " <vendor name> <product name>", 'red'))
 else:
-    print("[*] Generating vender-blobs.mk for vendor/" + sys.argv[1] + '/' + sys.argv[2] + " folder\033[0;0m")
+    print(colored("[*] Generating vender-blobs.mk for vendor/" + sys.argv[1] + '/' + sys.argv[2] + " folder", 'cyan'))
     sleep(.2)
 
     rt = os.popen('find vendor/' + sys.argv[1] + "/" + sys.argv[2] + "/proprietary").read()
@@ -57,9 +59,9 @@ else:
         slice_len = len(sys.argv[1]) + len(sys.argv[2]) + 20
         for i in file_list:
             file_value += " \\\n    " + i + ":system"+ i[slice_len:]
-        print("\033[01;36m[*] Saving makefile: vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/" + sys.argv[2] + "-vendor-blobs.mk\033[0;0m")
+        print(colored("[*] Saving makefile: vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/" + sys.argv[2] + "-vendor-blobs.mk", 'cyan'))
         print(file_value)
         file = open("vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/" + sys.argv[2] + "-vendor-blobs.mk", 'w')
         file.write(file_value)
         file.close()
-        print("\n\033[36m[*] Done!\033[0m")
+        print(colored("\n[*] Done!\033[0m", 'cyan'))
