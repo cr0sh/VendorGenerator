@@ -57,9 +57,9 @@ else:
         slice_len = len(sys.argv[1]) + len(sys.argv[2]) + 20
         for i in file_list:
             file_value += " \\\n    " + i + ":system"+ i[slice_len:]
-        print("\033[01;36m[*] Saving makefile: vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/vendor-blobs.mk\033[0;0m")
+        print("\033[01;36m[*] Saving makefile: vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/" + sys.argv[2] + "-vendor-blobs.mk\033[0;0m")
         print(file_value)
-        file = open("vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/vendor-blobs.mk", 'w')
+        file = open("vendor/" + sys.argv[1] + "/" + sys.argv[2] + "/" + sys.argv[2] + "-vendor-blobs.mk", 'w')
         file.write(file_value)
         file.close()
         print("\n\033[36m[*] Done!\033[0m")
